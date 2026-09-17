@@ -1872,10 +1872,21 @@ end
 		Name = "Close"
 	})
 	
-	local MinimizeButton = SetProps(CloseButton:Clone(), {
-		Position = UDim2.new(1, -35, 0.5),
-		Image = "rbxassetid://10734896206",
+	local MinimizeButton = Create("TextButton", ButtonsFolder, {
+		Size = UDim2.fromOffset(24, 24),
+		Position = UDim2.new(1, -55, 0.5, 0),
+		AnchorPoint = Vector2.new(1, 0.5),
+		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+		BorderSizePixel = 0,
+		Text = "−",
+		TextColor3 = Color3.fromRGB(0, 0, 0),
+		TextSize = 18,
+		Font = Enum.Font.GothamBold,
+		AutoButtonColor = false,
 		Name = "Minimize"
+	})
+	Create("UICorner", MinimizeButton, {
+		CornerRadius = UDim.new(0, 5)
 	})
 	
 	SetChildren(ButtonsFolder, {
@@ -1902,13 +1913,13 @@ end
 		WaitClick = true
 		
 		if Minimized then
-			MinimizeButton.Image = "rbxassetid://10734896206"
+			MinimizeButton.Text = "−"
 			CreateTween({MainFrame, "Size", SaveSize, 0.25, true})
 			ControlSize1.Visible = true
 			ControlSize2.Visible = true
 			Minimized = false
 		else
-			MinimizeButton.Image = "rbxassetid://10734924532"
+			MinimizeButton.Text = "□"
 			SaveSize = MainFrame.Size
 			ControlSize1.Visible = false
 			ControlSize2.Visible = false
@@ -3305,7 +3316,6 @@ end
     local Image3 = Configs.Image3 or ""
 
     local Copy1 = Configs.Copy1 or ""
-    local Copy2 = Configs.Copy2 or ""
     local Copy3 = Configs.Copy3 or ""
 
 
@@ -3369,9 +3379,8 @@ end
     end
 
 
-    MakeUser(UDim2.new(0.2,-30,0,80), Image1, Copy1)
-    MakeUser(UDim2.new(0.5,-30,0,80), Image2, Copy2)
-    MakeUser(UDim2.new(0.8,-30,0,80), Image3, Copy3)
+    MakeUser(UDim2.new(0.4,-30,0,80), Image1, Copy1)
+    MakeUser(UDim2.new(0.6,-30,0,80), Image3, Copy3)
 
 end
 			
