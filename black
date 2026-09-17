@@ -1512,7 +1512,7 @@ local GlowImage = Create("ImageLabel", MainFrame, {
     Size = UDim2.fromOffset(24, 24),
     Position = UDim2.new(0, 2, 0, 0),
     BackgroundTransparency = 1,
-    Image = "rbxassetid://132345390907066",
+    Image = "rbxassetid://",
     ImageTransparency = 0,
     ZIndex = 10
 })
@@ -1525,7 +1525,7 @@ local SizeButton = Create("ImageButton", MainFrame, {
     Size = UDim2.fromOffset(25, 25),
 
     -- لليسار شوي + لتحت شوي
-    Position = UDim2.new(1, -105, 0, 0),
+    Position = UDim2.new(1, -35, 0, 0),
 
     BackgroundTransparency = 1,
     Image = "rbxassetid://81173863250339",
@@ -1871,18 +1871,14 @@ end
 		Name = "Close"
 	})
 	
-	local MinimizeButton = Create("TextButton", ButtonsFolder, {
-		Size = UDim2.fromOffset(24, 24),
-		Position = UDim2.new(1, -35, 0.5, 0),
+		local CloseButton = Create("ImageButton", {
+		Size = UDim2.new(0, 14, 0, 14),
+		Position = UDim2.new(1, -10, 0.5),
 		AnchorPoint = Vector2.new(1, 0.5),
-		BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-		BorderSizePixel = 0,
-		Text = "−",
-		TextColor3 = Color3.fromRGB(255, 255, 255),
-		TextSize = 18,
-		Font = Enum.Font.GothamBold,
+		BackgroundTransparency = 1,
+		Image = "rbxassetid://10747384394",
 		AutoButtonColor = false,
-		Name = "Minimize"
+		Name = "Close"
 	})
 	Create("UICorner", MinimizeButton, {
 		CornerRadius = UDim.new(0, 5)
@@ -3706,5 +3702,5 @@ end
 
 return redzlib
 
--- SV LIB
--- by Shadow
+
+-- by George
