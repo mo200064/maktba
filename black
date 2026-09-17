@@ -1520,18 +1520,17 @@ local GlowImage = Create("ImageLabel", MainFrame, {
 
 
 
-local SizeButton = Create("TextButton", MainFrame, {
+local SizeButton = Create("ImageButton", MainFrame, {
     Name = "SizeButton",
     Size = UDim2.fromOffset(25, 25),
-    Position = UDim2.new(1, -70, 0, -6),
-    BackgroundTransparency = 1,
-    Text = "♡",
-    TextSize = 18,
-    Font = Enum.Font.GothamBold,
-    TextColor3 = Color3.fromRGB(255,255,255),
-    ZIndex = 50
-})
 
+    -- لليسار شوي + لتحت شوي
+    Position = UDim2.new(1, -105, 0, 0),
+
+    BackgroundTransparency = 1,
+    Image = "rbxassetid://81173863250339",
+    AutoButtonColor = false,
+})
 
 local SizeMenu = Create("Frame", MainFrame, {
     Name = "SizeMenu",
@@ -1874,12 +1873,12 @@ end
 	
 	local MinimizeButton = Create("TextButton", ButtonsFolder, {
 		Size = UDim2.fromOffset(24, 24),
-		Position = UDim2.new(1, -55, 0.5, 0),
+		Position = UDim2.new(1, -35, 0.5, 0),
 		AnchorPoint = Vector2.new(1, 0.5),
-		BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+		BackgroundColor3 = Color3.fromRGB(0, 0, 0),
 		BorderSizePixel = 0,
 		Text = "−",
-		TextColor3 = Color3.fromRGB(0, 0, 0),
+		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextSize = 18,
 		Font = Enum.Font.GothamBold,
 		AutoButtonColor = false,
@@ -1899,7 +1898,7 @@ end
 	function Window:CloseBtn()
 		local Dialog = Window:Dialog({
 			Title = "إغلاق",  
-			Text = "هل حقا بدك تقفل سكربت ؟", -- رساله قفل الواجهه
+			Text = "هل تريد قفل السكربت ؟", -- رساله قفل الواجهه
 			Options = {
 				{"نعم", function()  -- باتن الموافقه ايزي يعني
 					ScreenGui:Destroy()
